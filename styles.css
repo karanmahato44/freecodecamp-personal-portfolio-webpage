@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Roboto&display=swap');
+
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  border: 1px solid #000;
+}
+
+.nav-link a {
+  font-style: normal;
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  transition: background-color 0.15s;
+  transition: opacity 0.15s;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.nav-link a:hover {
+  background-color: #45567d;
+}
+
+.nav-link a:active {
+  opacity: 0.8;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.nav #navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3%;
+  align-items: center;
+  background-color: #be3144;
+  padding: 0 5%;
+  height: 60px;
+  width: 100%;
+}
+
+#welcome-section {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  color: white;
+}
+
+#welcome-section h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  padding: 10px;
+}
+
+#welcome-section em {
+  color: #be3144;
+  font-size: 1.2rem;
+}
+
+.work {
+  width: 100%;
+  background-color: #45567d;
+}
+
+.works-title > p {
+  text-align: center;
+  font-size: 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  border-bottom: 0.2rem solid #f0f0f0;
+  padding: 120px 0 20px 0;
+  color: #f0f0f0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 50px 20px;
+  gap: 40px;
+  row-gap: 40px;
+}
+
+.project-card {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+  height: 440px;
+  border-radius: 5px;
+  border: 1px solid rgb(37, 36, 36);
+  box-shadow: 1px 1px 4px 0 rgb(37, 36, 36);
+}
+
+.project-ss {
+  height: 90%;
+}
+
+.project-ss img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-title span {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.project-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  background-color: #303841;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 4px solid #be3144;
+  padding: 240px 50px;
+  background-color: #303841;
+  color: #f0f0f0;
+}
+
+.contact p {
+  font-size: 4rem;
+  padding-bottom: 3rem;
+  color: #f0f0f0;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  font-size: 1.5rem;
+}
+
+.socials div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials img {
+  filter: invert(80%);
+  width: 30px;
+  height: 60%;
+  vertical-align: middle;
+  object-fit: fill;
+}
+
+.socials span {
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #303841;
+  padding: 2rem 0;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+/* mq */
+
+@media (min-width: 768px) {
+  #projects {
+    grid-template-columns: 1fr 1fr;
+    padding: 50px 50px;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 992px) {
+  #projects {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px 100px;
+  }
+}
+
+/* hovers */
+.project-card {
+  position: relative;
+}
+
+.project-card:hover .project-title {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card:hover .project-title::before,
+.project-card:hover .project-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background-color: #be3144;
+}
+
+.project-card:hover .project-title::before {
+  left: -10px;
+}
+
+.project-card:hover .project-title::after {
+  right: -10px;
+}
